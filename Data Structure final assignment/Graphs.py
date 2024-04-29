@@ -115,8 +115,8 @@ for edge in graph.edges:
 
 # Draw the graph
 plt.figure(figsize=(14, 14))  # Larger figure size
-pos = nx.spring_layout(G)
-edge_labels = nx.get_edge_attributes(G, 'label')
+pos = nx.spring_layout(G) # Generate node positions using the spring layout from NetworkX
+edge_labels = nx.get_edge_attributes(G, 'label') # Get edge labels stored as attributes in (G)
 nx.draw(G, pos, with_labels=True, font_weight='bold', node_color='pink', node_size=1000)
 nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
 
