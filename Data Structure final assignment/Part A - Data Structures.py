@@ -1,12 +1,12 @@
 import heapq
-class Post:  # Define a class named Post to represent a social media post
-    def __init__(self, datetime, content, views, userName):  # Constructor method for initializing a Post object with attributes.
+class Post:  # define a class named Post to represent a social media post
+    def __init__(self, datetime, content, views, userName):  # constructor method for initializing a Post object with attributes
         self.datetime = datetime  # adding an attribute of date time
         self.content = content  # adding an attribute of content
         self.views = views  # adding an attribute of views
         self.userName = userName  # adding an attribute of user name
 
-    def __str__(self):  # define a function to display all attributes of the post after creating objects for it
+    def __str__(self):  # define a function to display all attributes of the post after creating objects for it with string representation
         return f"DateTime: {self.datetime}, Content: {self.content}, Views: {self.views}, UserName: {self.userName}"
 
 
@@ -16,7 +16,7 @@ class HashTable:  # define a class named Hash Table to implement the hash table 
         self.size = size  # size of the hash table
         self.table = {}  # initialize an empty dictionary that we will be adding various posts in
 
-    def hash_function(self, datetime):  # define a hash function to calculate the hash value of a datetime.
+    def hash_function(self, datetime):  # define a hash function to calculate the hash value of a datetime
         return hash(datetime) % self.size
 
     def insert(self, post):  # define a function to insert a post into the hash table.
