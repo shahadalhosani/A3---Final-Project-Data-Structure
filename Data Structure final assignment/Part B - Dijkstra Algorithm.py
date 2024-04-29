@@ -1,4 +1,4 @@
-from Graphs import *
+from Graphs import * # used in pycharm when we want to connect a file that we are working with to a seperate file to avoid any errors, in this case it is the Graph file
 
 import heapq  # Importing heapq for implementing heaps
 def dijkstra(graph, start, end):  # define a function to find the shortest path using Dijkstra's algorithm
@@ -7,15 +7,15 @@ def dijkstra(graph, start, end):  # define a function to find the shortest path 
     previous = {}  # To store the previous vertex for each vertex
     queue = [(0, start)]  # initialize a priority queue with (distance, vertex) tuples
 
-    while queue:  # execute Dijkstra's algorithm until the priority queue is empty
-        current_distance, current_vertex = heapq.heappop(queue)  # pop the vertex with the smallest distance from the priority queue
+    while queue:  # a while loop to execute Dijkstra's algorithm until the priority queue is empty
+        current_distance, current_vertex = heapq.heappop(queue)  # pop the vertex with the smallest distance from the priority queue using the .pop() function
 
-        if current_vertex == end:
-            break  # if the current vertex is the end vertex, exit the loop
+        if current_vertex == end: # checks if the current vertex is the end vertex
+            break  # if it is, exit the loop
 
-        for neighbor, edge in graph.vertices[current_vertex].adjacent.items():  # iterate through the neighbors of the current vertex
-            weight = edge.length  # get the weight of the edge
-            distance = current_distance + weight  # calculate the total distance to the neighbor
+        for neighbor, edge in graph.vertices[current_vertex].adjacent.items(): # a for loop to iterate through the neighbors of the current vertex
+            weight = edge.length  # get the weight of the edge, which is also the length between the intersections(nodes)
+            distance = current_distance + weight  # calculate the total distance to the neighbor by adding the current distance with the weight(length of the edge)
 
             if distance < distances[neighbor]:  # check if the new distance is smaller than the current distance to the neigbhbot
                 distances[neighbor] = distance  # if it is, update the distance to the neighbor
